@@ -33,7 +33,6 @@
 #ifndef IO_TEST_SUITE_H_
 #define IO_TEST_SUITE_H_
 
-
 /**
  * @brief Runs all the io tests.
  *
@@ -65,5 +64,4 @@
  * TEST_FAIL ------ One or more tests failed
 */
 int run_io_test_suite();
-
 #endif /* IO_TEST_SUITE_H_ */

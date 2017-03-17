@@ -61,8 +61,8 @@ static char *main_help =
         "\t--all       | -a       includes all above tests \n"
         "\t--uart      | -u       uart loopback testing - not yet supported\n"
         "\t--gpio      | -g       gpio loopback testing - not yet supported\n"
-        "\t--help      | -h       Prints this help \n"
-        "\n";
+	"\t--help      | -h       Prints this help \n"
+	"\n";
 
 static struct option main_long_opts[] = {
         { "pthreads", 0, 0, 'p' },
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
     int pthreads      = 0; 
     int timers        = 0;  
     int devices       = 0;
-
+    int pwm           = 0;
     int i = 1; 
     
     if (argc < 2)
@@ -138,8 +138,8 @@ int main(int argc, char *argv[])
 
             case 'g': 
                 gpio_loopback = 1; 
-                break; 
-
+                break;
+ 
             case 'h':
             default:
                     LOG_INFO("%s", main_help);
@@ -172,6 +172,7 @@ int main(int argc, char *argv[])
         LOG_INFO("Starting DSPAL devices tests");
         status |= run_io_test_suite();
     }
+
 
     if ( uart_loopback ) {
         LOG_INFO("DSPAL uart loopback test not supported");
